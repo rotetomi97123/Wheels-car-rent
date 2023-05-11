@@ -4,6 +4,9 @@ import Hero from '../Components/Hero'
 import Onama from '../Components/Onama'
 import Companies from '../Components/companies'
 import Popular from '../Components/Popular'
+import Ponuda from '../Components/Ponuda'
+import Wheels from '../Components/Wheels'
+import Footer from '../Components/Footer'
 
 
 const Home = () => {
@@ -12,8 +15,11 @@ const Home = () => {
         <Navbar />
         <Hero />
         <Onama />
+        <Ponuda />
         <Companies />
         <Popular />
+        <Wheels />
+        <Footer />
     </div>
   )
 }

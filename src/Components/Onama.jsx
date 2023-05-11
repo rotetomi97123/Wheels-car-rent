@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AiFillCar } from 'react-icons/ai'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Onama = () => {
+
+// Animation start
+const controls = useAnimation();
+const [ref, inView] = useInView({ threshold: 0.2 });
+
+useEffect(() => {
+  if (inView) {
+    controls.start('visible');
+  }
+}, [controls, inView]);
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } }
+};
+// Animation end
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
         <TopDiv>
-            <h1>O NAMA</h1>
+                <h1>O NAMA</h1>
             <Flex>
                 <Line />
                 <AiFillCar size={30} />
@@ -14,6 +33,7 @@ const Onama = () => {
             </Flex>
             <p>Wheels car rental</p>
         </TopDiv>
+        <motion.div animate={controls} initial="hidden" variants={fadeIn}>
         <BottomDiv>
             <LeftDiv>
                 <p>Dobrodošli na Wheels car rent - vaš pouzdan partner za iznajmljivanje automobila u Srbiji. 
@@ -27,6 +47,7 @@ const Onama = () => {
                 <img src='https://images.unsplash.com/photo-1519557489688-c30c74763166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='car' />
             </RightDiv>
         </BottomDiv>
+        </motion.div>
     </Wrapper>
   )
 }
@@ -90,7 +111,7 @@ const RightDiv = styled.div`
             max-width: 500px;
         }
         @media (max-width: 500px){
-            max-width: 300px;
+            width:300px;
         }
     }
 `

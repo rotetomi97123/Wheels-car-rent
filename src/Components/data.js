@@ -1,7 +1,7 @@
 export const Logos = [
     {
         id: 1,
-        img : 'https://1000logos.net/wp-content/uploads/2018/02/Ford-Logo.png'
+        img : 'https://1000logos.net/wp-content/uploads/2018/02/Ford-Logo.png',
     },
     {
         id: 2,
@@ -14,13 +14,12 @@ export const Logos = [
     },
     {
         id: 4,
-        img : 'https://upload.wikimedia.org/wikipedia/sh/thumb/2/28/Peugeot_logo.svg/1200px-Peugeot_logo.svg.png'
+        img : 'https://images.summitmedia-digital.com/topgear/images/2018/09/13/peugeot-1536828795.png'
     },
     {
         id: 5,
         img : 'https://www.carlogos.org/logo/Volkswagen-emblem-2014-1920x1080.png'
-    },
-    
+    }
 ]
 export const Cars = [
     {
@@ -31,10 +30,10 @@ export const Cars = [
         seat: 5,
         door: 5,
         change: 'MANUAL',
-        klima: 'klima',
+        klima: 'KLIMA',
         brzina: 6,
         price: 20,
-        img : 'http://www.tantum.rs/assets/img/tantum/cars/FIAT-BRAVO-2012-motorionline.jpg'
+        img : 'https://ifigenia-car-rental.com/wp-content/uploads/2018/06/FIAT-BRAVO.png'
     },
     {
         id: 2,
@@ -44,10 +43,10 @@ export const Cars = [
         seat: 5,
         door: 5,
         change: 'MANUAL',
-        klima: 'klima',
+        klima: 'KLIMA',
         brzina: 6,
         price: 20,
-        img : 'http://www.tantum.rs/assets/img/tantum/cars/rent-car-beograd-vw-golf-5.jpg'
+        img : 'https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/stock-images/chrome/a7e6b3e053bab48953e4fda4374c8871.png'
     },
   
     {

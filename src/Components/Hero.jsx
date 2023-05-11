@@ -1,25 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Hero = () => {
+
+  // Animation start
+const controls = useAnimation();
+const [ref, inView] = useInView({ threshold: 0.2 });
+
+useEffect(() => {
+  if (inView) {
+    controls.start('visible');
+  }
+}, [controls, inView]);
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } }
+};
+// Animation end
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <ImgWrap>
         <img src='https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' alt='car' />
       </ImgWrap>
       <ItemContainer>
         <FlexDiv>
-          <TextWrap>  
-            <h1>RENT A CAR BEOGRAD</h1>
-            <p>NEOGRANIČENA KILOMETRAŽA BEZ DEPOZITA</p>
-            <h4>Već od 15€ dnevno <br/>
-                Specijalna ponuda na rentiranje od 30 dana<br/>
-                Dostava vozila na adresu<br/>
-                Zeleni karton gratis
-            </h4>
-          </TextWrap>
+        <motion.div animate={controls} initial="hidden" variants={fadeIn}>
+            <TextWrap>  
+              <h1>RENT A CAR BEOGRAD</h1>
+              <p>NEOGRANIČENA KILOMETRAŽA BEZ DEPOZITA</p>
+              <h4>Već od 15€ dnevno <br/>
+                  Specijalna ponuda na rentiranje od 30 dana<br/>
+                  Dostava vozila na adresu<br/>
+                  Zeleni karton gratis
+              </h4>
+            </TextWrap>
+           </motion.div>
           <LogoWrap>
-            <img src='https://i.ibb.co/QkgfgMm/Wheels-Rent-Car-1.png' alt='logo' />
+            <motion.div animate={controls} initial="hidden" variants={fadeIn}>
+              <img src='https://i.ibb.co/QkgfgMm/Wheels-Rent-Car-1.png' alt='logo' />
+            </motion.div>
           </LogoWrap>
         </FlexDiv>
       </ItemContainer>

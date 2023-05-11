@@ -12,7 +12,7 @@ const Navbar = () => {
   const [mobileNav, setMobileNav] = useState(false)
   const [isMobile, setIsMobile] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
-
+  
   const handleParagraphClick = (index) => {
     setActiveIndex(index);
   }
@@ -33,7 +33,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper >
         <UpperWrap>
             <FlexDiv>
               <FaMapMarkerAlt size={20} color='#2E8BC0' />
@@ -161,12 +161,12 @@ const MainNav = styled.div`
   top: 5vh;
   z-index: 10;
   width: 100%;
-  height: 13vh;
+  height: 10vh;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  background: rgba(0, 0, 0, 0.8);
-  h1{
+  background-color: rgba(0, 0, 0, 0.8);
+   h1{
     color:white;
     font-size:4rem;
     cursor: pointer;
