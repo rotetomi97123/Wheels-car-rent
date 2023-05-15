@@ -57,6 +57,7 @@ const fadeIn = {
   visible: { opacity: 1, transition: { duration: 1 } }
 };
 // Animation end
+
   return (
     <Wrapper ref={ref}> 
       <motion.div animate={controls} initial="hidden" variants={fadeIn}>
@@ -67,11 +68,11 @@ const fadeIn = {
           pagination: false,
           drag: false,
           gap: '5rem',
-          speed: 1000 // set transition speed to 500 milliseconds
+          speed: 1000 
         }}>
             {images.map((item) => {
               return(
-                <SplideSlide id={item.id}>
+                <SplideSlide key={item.id} id={item.id}>
                   <Card>              
                       <img src={item.img} alt='kep' />                         
                   </Card>

@@ -11,11 +11,15 @@ const Navbar = () => {
   
   const [mobileNav, setMobileNav] = useState(false)
   const [isMobile, setIsMobile] = useState(true);
+
+  //-----
   const [activeIndex, setActiveIndex] = useState(0);
   
   const handleParagraphClick = (index) => {
     setActiveIndex(index);
   }
+  //-----
+
   useEffect(() => {
     const handleResize = () => {
       if(window.innerWidth < 700){
@@ -57,20 +61,20 @@ const Navbar = () => {
         <MainNav>            
             <h1>WHEELS</h1>
             {isMobile &&<NavDiv>
-              <Link to='/'><StyledParagraph active={activeIndex === 0} onClick={() => handleParagraphClick(0)}>POČETNA</StyledParagraph></Link>
-              <Link to='/OpstiUslovi'><StyledParagraph active={activeIndex === 1} onClick={() => handleParagraphClick(1)}>OPŠTI USLOVI</StyledParagraph></Link>
-              <Link to='/'><StyledParagraph active={activeIndex === 2} onClick={() => handleParagraphClick(2)}>AUTOMOBILI</StyledParagraph></Link>
-              <Link to='/'><StyledParagraph active={activeIndex === 3} onClick={() => handleParagraphClick(3)}>KONTAKT</StyledParagraph></Link>
+              <Link to='/'><StyledParagraph>POČETNA</StyledParagraph></Link>
+              <Link to='/OpstiUslovi'><StyledParagraph>OPŠTI USLOVI</StyledParagraph></Link>
+              <Link to='/Automobili'><StyledParagraph>AUTOMOBILI</StyledParagraph></Link>
+              <Link to='/Kontakt'><StyledParagraph>KONTAKT</StyledParagraph></Link>
 
             </NavDiv>}
               {isMobile === true ? '' : <RxHamburgerMenu onClick={()=>{setMobileNav(true)}} color='white' size={30} cursor='pointer'/> }
             </MainNav>
             {mobileNav &&<MobileNavDiv>
               <Exit onClick={()=>{setMobileNav(false)}} />
-              <Link to='/'><StyledMobileParagraph active={activeIndex === 0} onClick={() => handleParagraphClick(0)}>POČETNA</StyledMobileParagraph></Link>
-              <Link to='/OpstiUslovi'><StyledMobileParagraph active={activeIndex === 1} onClick={() => handleParagraphClick(1)}>OPŠTI USLOVI</StyledMobileParagraph></Link>
-              <Link to='/'><StyledMobileParagraph active={activeIndex === 2} onClick={() => handleParagraphClick(2)}>AUTOMOBILI</StyledMobileParagraph></Link>
-              <Link to='/'><StyledMobileParagraph active={activeIndex === 3} onClick={() => handleParagraphClick(3)}>KONTAKT</StyledMobileParagraph></Link>
+              <Link to='/'><StyledMobileParagraph >POČETNA</StyledMobileParagraph></Link>
+              <Link to='/OpstiUslovi'><StyledMobileParagraph>OPŠTI USLOVI</StyledMobileParagraph></Link>
+              <Link to='/Automobili'><StyledMobileParagraph>AUTOMOBILI</StyledMobileParagraph></Link>
+              <Link to='/Kontakt'><StyledMobileParagraph>KONTAKT</StyledMobileParagraph></Link>
             </MobileNavDiv>}
     </Wrapper>
   )

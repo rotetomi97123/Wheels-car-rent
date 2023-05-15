@@ -4,7 +4,7 @@ import { AiFillCar } from 'react-icons/ai'
 import {BsArrowRight} from 'react-icons/bs'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import { Link } from 'react-router-dom';
 
 const Wheels = () => {
 
@@ -43,7 +43,7 @@ const Wheels = () => {
                     <BtnDiv>
                         <h1>OPŠTI USLOVI NAJMA</h1>
                         <p>Opšte Uslove Iznajmljivanja Vozila Agencije Tantum Rent A Car Pročitajte U Posebnom Delu.</p>
-                        <Btn>OPŠTI USLOVI <span><BsArrowRight /></span></Btn>
+                        <Link to='/OpstiUslovi'><Btn>OPŠTI USLOVI <span><BsArrowRight /></span></Btn></Link>
                     </BtnDiv>
                 </Box>
             </BottomDiv>
@@ -55,6 +55,9 @@ const Wrapper = styled.div`
     width: 100%;
     height: 80vh;
     margin-top: 3rem;
+    @media (max-width: 750px){
+        margin-bottom: 15rem;
+      }
 `
 const BottomDiv = styled.div`
     width: 100%;
@@ -120,6 +123,9 @@ const ImageDiv = styled.div`
         height: 50%;
         display:flex;
         justify-content:center;
+        img{
+            width: 300px;
+        }
     }
 `
 const BtnDiv = styled.div`
@@ -129,6 +135,10 @@ const BtnDiv = styled.div`
     justify-content:center;
     align-items: flex-start;
     flex-direction:column;
+    a{
+        list-style-type:none;
+        text-decoration:none;
+    }
     h1{
         margin-bottom: 1rem;
         font-size: 2rem;

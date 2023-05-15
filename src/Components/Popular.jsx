@@ -39,7 +39,7 @@ const fadeIn = {
             <Box>
                 {Cars.map((item,index) => {
                     return(
-                        <ItemWrap>
+                        <ItemWrap key={index}>
                                 <img src={item.img} alt={item.name}  />
                                 <FlexDiv>
                                     <NameDiv>

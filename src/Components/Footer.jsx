@@ -59,9 +59,7 @@ const Wrapper = styled.div`
   @media (max-width: 1200px) {
     height: 100%;
   }
-  @media (max-width: 750px){
-    margin-top: 15rem;
-  }
+  
 `
 const Flex = styled.div`
   display:flex;
