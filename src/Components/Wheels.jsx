@@ -39,7 +39,7 @@ const Wheels = () => {
             <BottomDiv>
                 <Box>
                     <ImageDiv>
-                        <img src='https://i.ibb.co/QkgfgMm/Wheels-Rent-Car-1.png' alt='logo' />
+                        <img src={Logo} alt='logo' />
                     </ImageDiv>
                     <BtnDiv>
                         <h1>OPŠTI USLOVI NAJMA</h1>
