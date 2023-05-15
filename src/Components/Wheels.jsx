@@ -5,6 +5,7 @@ import {BsArrowRight} from 'react-icons/bs'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/logo.png'
 
 const Wheels = () => {
 

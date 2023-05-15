@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Logo from '../assets/logo.png'
 
 const Hero = () => {
 
@@ -41,7 +42,7 @@ const fadeIn = {
            </motion.div>
           <LogoWrap>
             <motion.div animate={controls} initial="hidden" variants={fadeIn}>
-              <img src='https://i.ibb.co/QkgfgMm/Wheels-Rent-Car-1.png' alt='logo' />
+              <img src={Logo} alt='logo' />
             </motion.div>
           </LogoWrap>
         </FlexDiv>
