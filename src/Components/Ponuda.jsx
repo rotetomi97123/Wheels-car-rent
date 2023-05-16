@@ -5,6 +5,8 @@ import {IoIosPricetag} from 'react-icons/io'
 import { Cars } from './data'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom'
+import queryString from 'query-string';
 
 const Ponuda = () => {
 
@@ -58,7 +60,10 @@ const fadeIn = {
                         <GridItem>{Cars[2].brzina} BRZINA</GridItem>
                     </GridContainer>
                     <BtnDiv>
-                        <Btn>Rezerviraj</Btn>
+                        <Link  to={{ 
+                                pathname: '/AutoReservation',
+                                search:   queryString.stringify({ myProp: JSON.stringify(Cars[2])}),
+                            }}><Btn>Rezerviraj</Btn></Link>
                     </BtnDiv>
                 </RightDiv>
                 <LeftDiv />
@@ -88,7 +93,10 @@ const fadeIn = {
                         <GridItem>{Cars[0].brzina} BRZINA</GridItem>
                     </GridContainer>
                     <BtnDiv>
-                        <Btn>Rezerviraj</Btn>
+                    <Link  to={{ 
+                                pathname: '/AutoReservation',
+                                search:   queryString.stringify({ myProp: JSON.stringify(Cars[0])}),
+                            }}><Btn>Rezerviraj</Btn></Link>
                     </BtnDiv>
                 </RightDiv>
             </Box2>
@@ -115,7 +123,10 @@ const fadeIn = {
                     <GridItem>{Cars[1].brzina} BRZINA</GridItem>
                 </GridContainer>
                 <BtnDiv>
-                    <Btn>Rezerviraj</Btn>
+                <Link  to={{ 
+                                pathname: '/AutoReservation',
+                                search:   queryString.stringify({ myProp: JSON.stringify(Cars[1])}),
+                            }}><Btn>Rezerviraj</Btn></Link>
                 </BtnDiv>
             </Box3>
         </Wrapper>

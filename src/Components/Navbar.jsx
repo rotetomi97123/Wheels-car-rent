@@ -9,32 +9,27 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   
-  const [mobileNav, setMobileNav] = useState(false)
-  const [isMobile, setIsMobile] = useState(true);
-
-  //-----
-  const [activeIndex, setActiveIndex] = useState(0);
   
-  const handleParagraphClick = (index) => {
-    setActiveIndex(index);
-  }
   //-----
-
   useEffect(() => {
     const handleResize = () => {
-      if(window.innerWidth < 700){
-        setIsMobile(false)
-      }else{
-        setIsMobile(true)
-        setMobileNav(false)
+      if (window.innerWidth < 800) {
+        setMobileNav(false);
+      } else {
       }
-      
     };
+
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+
+  //-----
+  const [mobileNav, setMobileNav] = useState(false)
+
 
   return (
     <Wrapper >
@@ -60,14 +55,13 @@ const Navbar = () => {
         </UpperWrap>
         <MainNav>            
             <h1>WHEELS</h1>
-            {isMobile &&<NavDiv>
+           <NavDiv>
               <Link to='/'><StyledParagraph>POČETNA</StyledParagraph></Link>
               <Link to='/OpstiUslovi'><StyledParagraph>OPŠTI USLOVI</StyledParagraph></Link>
               <Link to='/Automobili'><StyledParagraph>AUTOMOBILI</StyledParagraph></Link>
               <Link to='/Kontakt'><StyledParagraph>KONTAKT</StyledParagraph></Link>
-
-            </NavDiv>}
-              {isMobile === true ? '' : <RxHamburgerMenu onClick={()=>{setMobileNav(true)}} color='white' size={30} cursor='pointer'/> }
+            </NavDiv>
+            <Hamburger onClick={()=>{setMobileNav(true)}} color='white' size={30} cursor='pointer'/>
             </MainNav>
             {mobileNav &&<MobileNavDiv>
               <Exit onClick={()=>{setMobileNav(false)}} />
@@ -89,6 +83,12 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
+`
+const Hamburger = styled(RxHamburgerMenu)`
+  display:none;
+   @media (max-width: 800px) {
+    display:flex;
+  }
 `
 const UpperWrap = styled.div`
   width: 100%;
@@ -251,6 +251,9 @@ const NavDiv = styled.div`
   a{
     text-decoration:none;
     list-style-type:none;
+  }
+  @media (max-width: 800px) {
+    display:none;
   }
 `
 

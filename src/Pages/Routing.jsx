@@ -4,6 +4,7 @@ import Home from './Home'
 import OpstiUslovi from './OpstiUslovi'
 import Kontakt from './Kontakt'
 import Automobili from './Automobili'
+import AutoReservation from './AutoReservation'
 
 const Routing = () => {
   return (
@@ -12,7 +13,7 @@ const Routing = () => {
           <Route path='/OpstiUslovi'  element={<OpstiUslovi />}  />
           <Route path='/Kontakt'  element={<Kontakt />}  />
           <Route path='/Automobili'  element={<Automobili />}  />
-
+          <Route path='/AutoReservation'  element={<AutoReservation />}  />
     </Routes>
   )
 }

@@ -5,6 +5,8 @@ import { Cars } from './data'
 import { IoIosPricetag } from 'react-icons/io'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import queryString from 'query-string';
+import { Link } from 'react-router-dom'
 
 const Popular = () => {
 
@@ -52,7 +54,10 @@ const fadeIn = {
                                         <p>{item.price}€/DAN</p>
                                     </PriceDiv>
                                 </FlexDiv>
-                                <Btn>Rezerviraj</Btn>
+                                <Link  to={{ 
+                                    pathname: '/AutoReservation',
+                                    search:   queryString.stringify({ myProp: JSON.stringify(item)}),
+                                }}><Btn>Rezerviraj</Btn></Link>
                          </ItemWrap>
                     )
                 })}
