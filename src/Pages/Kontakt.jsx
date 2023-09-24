@@ -12,7 +12,6 @@ const Kontakt = () => {
         <Navbar />
         <OpstiUsloviHero title="KONTAKT" text="Wheels car rental" text2="+381 65 123 1234" />
         <KontaktForm />
-        <Map />
         <Footer />
     </div>
   )

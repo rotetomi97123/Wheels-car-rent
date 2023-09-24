@@ -6,7 +6,7 @@ const OpstiUsloviHero = ({title,text, text2}) => {
   return (
     <Wrapper>
           <ImgWrap>
-            <img src='https://cityexpert.rs/a/sites/default/files/styles/1920x600/public/bw/novogradnja-beograd-na-vodi.jpg' alt='beograd' />
+            <img src='https://www.belgradewaterfront.com/static/uploads/development_render_02-min-1024x768.jpg' alt='beograd' />
           </ImgWrap>
           <ItemContainer>
             <FlexDiv>
